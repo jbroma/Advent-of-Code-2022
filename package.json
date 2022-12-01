@@ -1,0 +1,11 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jakub Romanczyk <j.romanczyk@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "prettier": "^2.8.0"
+  }
+}
