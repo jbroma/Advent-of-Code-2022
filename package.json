@@ -5,7 +5,12 @@
   "author": "Jakub Romanczyk <j.romanczyk@gmail.com>",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
   "devDependencies": {
-    "prettier": "^2.8.0"
+    "@types/node": "^18.11.10",
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3"
   }
 }

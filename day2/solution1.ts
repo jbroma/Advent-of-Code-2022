@@ -8,20 +8,22 @@ const lineReader = readline.createInterface({
 let score = 0;
 
 const scoring = {
-    "AX": 3,
-    "AY": 4,
-    "AZ": 8,
+    "AX": 4,
+    "AY": 8,
+    "AZ": 3,
     "BX": 1,
     "BY": 5,
     "BZ": 9,
-    "CX": 2,
-    "CY": 6,
-    "CZ": 7
+    "CX": 7,
+    "CY": 2,
+    "CZ": 6,
 }
+
+type scoringKey = keyof typeof scoring;
 
 lineReader.on('line', (line) => {
     const pair = line.split(" ").join("");
-    score += scoring[pair];
+    score += scoring[pair as scoringKey];
 });
 
 lineReader.on('close', () => {

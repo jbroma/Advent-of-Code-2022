@@ -6,7 +6,7 @@ const lineReader = readline.createInterface({
 });
 
 let index = 0, sum = 0;
-const sets = new Array(3);
+const sets = new Array<Set<string>>(3);
 
 lineReader.on('line', (line) => {
     sets[index % 3] = new Set(line);
