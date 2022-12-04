@@ -2,10 +2,11 @@ import fs from 'fs';
 import readline from 'readline';
 
 const lineReader = readline.createInterface({
-    input: fs.createReadStream('inputs.txt')
+    input: fs.createReadStream('inputs.txt'),
 });
 
-let index = 0, sum = 0;
+let index = 0,
+    sum = 0;
 const sets = new Array<Set<string>>(3);
 
 lineReader.on('line', (line) => {
@@ -20,7 +21,7 @@ lineReader.on('line', (line) => {
                     sum += charCode - 64 + 26;
                 }
             }
-        })
+        });
     }
     index++;
 });

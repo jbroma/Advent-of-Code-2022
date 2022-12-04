@@ -2,10 +2,11 @@ import fs from 'fs';
 import readline from 'readline';
 
 const lineReader = readline.createInterface({
-    input: fs.createReadStream('inputs.txt')
+    input: fs.createReadStream('inputs.txt'),
 });
 
-let index = 0, results = [0];
+let index = 0,
+    results = [0];
 
 lineReader.on('line', (line) => {
     if (!line) {

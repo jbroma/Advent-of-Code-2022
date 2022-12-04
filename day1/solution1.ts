@@ -2,10 +2,11 @@ import fs from 'fs';
 import readline from 'readline';
 
 const lineReader = readline.createInterface({
-    input: fs.createReadStream('inputs.txt')
+    input: fs.createReadStream('inputs.txt'),
 });
 
-let current = 0, highest = 0;
+let current = 0,
+    highest = 0;
 
 lineReader.on('line', (line) => {
     if (!line) {
@@ -19,5 +20,5 @@ lineReader.on('line', (line) => {
 });
 
 lineReader.on('close', () => {
-    console.log(highest)
+    console.log(highest);
 });
