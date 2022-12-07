@@ -1,10 +1,7 @@
-import fs from 'fs';
 import path from 'path';
-import readline from 'readline';
+import { initLineReader } from '../utils/lineReader';
 
-const lineReader = readline.createInterface({
-    input: fs.createReadStream('inputs.txt'),
-});
+const lineReader = initLineReader(__dirname);
 
 const lsPattern = /\$\ ls$/;
 const cdPattern = /\$\ cd\ (.*)$/;
@@ -35,11 +32,28 @@ lineReader.on('line', (line: string) => {
 });
 
 lineReader.on('close', () => {
+    // Part 1
     let sum = 0;
+
     directories.forEach((size) => {
         if (size <= 100000) {
             sum += size;
         }
     });
-    console.log(sum);
+
+    console.log('PART 1: ', sum);
+
+    // Part 2
+    const diskSpaceNeeded = 30000000;
+    const diskSpaceCurrentlyFree = 70000000 - directories.get('/')!;
+    const diskSpaceToFree = diskSpaceNeeded - diskSpaceCurrentlyFree;
+
+    let smallestDirSize = Infinity;
+    for (const size of directories.values()) {
+        if (size > diskSpaceToFree && size < smallestDirSize) {
+            smallestDirSize = size;
+        }
+    }
+
+    console.log('PART 2: ', smallestDirSize);
 });
