@@ -64,7 +64,6 @@ function travelToNextDestination(
     const {
         boundaries: [b1, b2],
     } = scanLine(cp[0], cp[1], direction, board);
-    console.log(`scan for p:${start}, d:${direction} ==> ${b1},${b2}`);
     for (let i = 0; i < steps; i++) {
         switch (direction) {
             case Direction.RIGHT: {
@@ -156,6 +155,6 @@ export default function () {
         }
 
         const result = getSolution(currentPosition, currentDirection);
-        console.log(result, currentPosition, currentDirection);
+        console.log('PART 1: ', result);
     });
 }
