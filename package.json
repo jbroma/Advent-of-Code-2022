@@ -4,6 +4,7 @@
     "main": "index.js",
     "author": "Jakub Romanczyk <j.romanczyk@gmail.com>",
     "license": "MIT",
+    "packageManager": "yarn@1.22.19",
     "scripts": {
         "typecheck": "tsc --noEmit"
     },
@@ -14,6 +15,7 @@
         "@types/jest": "^29.2.4",
         "@types/node": "^18.11.10",
         "jest": "^29.3.1",
+        "jest-each": "^29.3.1",
         "prettier": "^2.8.0",
         "ts-node": "^10.9.1",
         "typescript": "^4.9.3"
